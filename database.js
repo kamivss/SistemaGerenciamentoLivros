@@ -1,14 +1,12 @@
-
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 
-async function initializeDatabase() {
+export async function initializeDatabase() {
   const db = await open({
-    filename: './livros.db', 
-    driver: sqlite3.Database, 
+    filename: './livros.db',
+    driver: sqlite3.Database,
   });
 
-  // Cria a tabela 'livros' se não existir
   await db.exec(`
     CREATE TABLE IF NOT EXISTS livros (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,10 +18,6 @@ async function initializeDatabase() {
       data_cadastro TEXT NOT NULL
     )
   `);
-  console.log("Tabela 'livros' criada ou já existente.");
-
+  
   return db;
 }
-
-
-export default initializeDatabase;

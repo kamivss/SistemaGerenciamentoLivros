@@ -1,11 +1,11 @@
 {
   "name": "sistemagerenciamentolivros",
   "version": "1.0.0",
-  "description": "Sistema de gerenciamento de livros em Node.js",
+  "description": "Sistema de gerenciamento de livros",
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-require-module ./node_modules/jest/bin/jest.js",
     "start": "node app.js"
   },
   "repository": {
@@ -20,12 +20,20 @@
   },
   "homepage": "https://github.com/kamivss/SistemaGerenciamentoLivros#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
+    "babel-jest": "^29.7.0",
     "dayjs": "^1.11.13",
     "inquirer": "^9.2.12",
+    "jest-environment-jsdom": "^29.7.0",
+    "npm": "^11.1.0",
     "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "uninstall": "^0.0.0",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "jest-environment-node": "^29.7.0"
   }
 }

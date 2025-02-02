@@ -1,0 +1,18 @@
+
+services:
+  app:
+    build: .
+    container_name: gerenciador-livros
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    stdin_open: true  # Mantém o stdin aberto
+    tty: true         # Aloca um terminal virtual
+    command: node app.js  # Comando para iniciar a aplicação
+  test:
+    build: .
+    container_name: testes-sistemagerenciamentolivros
+    volumes:
+      - .:/app
+    command: ["node", "--experimental-vm-modules", "jest"]
