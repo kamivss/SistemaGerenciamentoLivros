@@ -1,19 +1,37 @@
+
 # Sistema de Gerenciamento de Livros
 
 ## Descrição
-Este é um sistema de gerenciamento de livros desenvolvido em Node.js com SQLite como banco de dados. Ele permite cadastrar, listar, buscar, atualizar e deletar livros.
 
-## Propriedades do Recurso (Livro)
-- **Campos obrigatórios**:
-  - `titulo` (texto): Título do livro.
-  - `autor` (texto): Autor do livro.
-  - `ano_publicacao` (número): Ano de publicação.
-- **Campos opcionais**:
-  - `genero` (texto): Gênero do livro.
-  - `preco` (número): Preço do livro.
-  - `data_cadastro` (texto): Data de cadastro no formato `YYYY-MM-DD`.
+O **Sistema de Gerenciamento de Livros** é uma aplicação para gerenciar o cadastro, edição, exclusão e visualização de livros.A aplicação permite que os usuários realizem as operações de CRUD (Create, Read, Update, Delete).
 
-## Como Executar
-1. Instale as dependências:
+## Funcionalidades
+
+- Listar Livros
+- Buscar por ID
+- Cadastrar Livros
+- Atualizar Livros
+- Deletar Livros
+
+## Tecnologias
+
+- **Linguagens** Javascript, Node.jjs
+- **Banco de Dados:** SQLite
+- **Testes:** Jest (Testes Unitários)
+- **Docker:** Para containerização 
+- **Bibiotecas:** Winston (logs)
+
+# Como rodar a aplicação com Docker
+
+## Pré-requisitos
+- Docker instalado.
+- Docker Compose instalado (opcional, mas recomendado).
+
+## Passos
+
+1. Clone o repositório:
    ```bash
-   npm install
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+
+

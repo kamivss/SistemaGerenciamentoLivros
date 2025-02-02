@@ -1,27 +1,25 @@
 // livros.test.js
-// 1️⃣ Mocka-se o módulo database.js **antes de importar listarLivros**
+import logger from '../logger.js';
+
 jest.mock('../database.js', () => ({
   initializeDatabase: jest.fn(() => {
-    console.log('Mock do initializeDatabase chamado');
     return Promise.resolve(mockDb);
   }),
 }));
 
-// 2️⃣ Importa-se o módulo listarLivros
 import { listarLivros, cadastrarLivro, buscarLivroPorId, atualizarLivro, deletarLivro} from '../TesteUnitario.js';
 
-// 3️⃣ Cria-se o mock do banco de dados
+
 const mockDb = {
   all: jest.fn(),
   run: jest.fn(),
   get: jest.fn(),
 };
-console.log('MockDb criado:', mockDb);
 
-// 4️⃣ Configuração antes de cada teste
+
+
 beforeEach(() => {
-  console.log('Configurando mocks no beforeEach');
-
+ 
   // Mock para listarLivros
   mockDb.all.mockResolvedValue([
     {
@@ -56,10 +54,14 @@ beforeEach(() => {
   mockDb.run.mockResolvedValue({ changes: 1 });
 });
 
-// 5️⃣ Testes
+
+
+// testes 
+
+
 describe('Testes de CRUD de livros', () => {
   test('Deve listar os livros corretamente', async () => {
-    console.log('Iniciando teste de listarLivros...');
+  
     const livros = await listarLivros();
     expect(livros).toEqual([
       {
@@ -75,9 +77,9 @@ describe('Testes de CRUD de livros', () => {
   });
 
   test('Deve cadastrar um livro corretamente', async () => {
-    console.log('Iniciando teste de cadastrarLivro...');
+    
   
-    // Mock específico para o cadastrarLivro
+   
     mockDb.run.mockResolvedValueOnce({ lastID: 2 }); // Simula a inserção de um livro
   
     const livro = {
@@ -90,9 +92,9 @@ describe('Testes de CRUD de livros', () => {
     };
   
     const id = await cadastrarLivro(livro);
-    expect(id).toBe(2); // ID do livro cadastrado
+    expect(id).toBe(2); 
   
-    // Verifica se o db.run foi chamado corretamente
+    
     expect(mockDb.run).toHaveBeenCalledWith(
       "INSERT INTO livros (titulo, autor, ano_publicacao, genero, preco, data_cadastro) VALUES (?, ?, ?, ?, ?, ?)",
       [livro.titulo, livro.autor, livro.ano_publicacao, livro.genero, livro.preco, livro.data_cadastro]
@@ -100,7 +102,7 @@ describe('Testes de CRUD de livros', () => {
   });
 
   test('Deve buscar um livro por ID corretamente', async () => {
-    console.log('Iniciando teste de buscarLivroPorId...');
+    
     const livro = await buscarLivroPorId(1);
     expect(livro).toEqual({
       id: 1,
@@ -114,7 +116,7 @@ describe('Testes de CRUD de livros', () => {
   });
 
   test('Deve atualizar um livro corretamente', async () => {
-    console.log('Iniciando teste de atualizarLivro...');
+  
     const livroAtualizado = {
       titulo: 'Livro A Atualizado',
       autor: 'Autor A',
@@ -124,12 +126,12 @@ describe('Testes de CRUD de livros', () => {
       data_cadastro: '2024-01-01',
     };
     const changes = await atualizarLivro(1, livroAtualizado);
-    expect(changes).toBe(1); // Número de linhas afetadas
+    expect(changes).toBe(1); 
   });
 
   test('Deve deletar um livro corretamente', async () => {
-    console.log('Iniciando teste de deletarLivro...');
+   
     const changes = await deletarLivro(1);
-    expect(changes).toBe(1); // Número de linhas afetadas
+    expect(changes).toBe(1); 
   });
 });

@@ -1,1 +1,15 @@
 2025-02-02 12:36:16:3616 [33mwarn[39m: [33mBanco de dados inicializado com sucesso.[39m
+2025-02-02 13:12:13:1213 [32minfo[39m: [32mSistema de gerenciamento de livros iniciado.[39m
+2025-02-02 13:12:13:1213 [32minfo[39m: [32mBanco de dados inicializado com sucesso.[39m
+2025-02-02 13:12:44:1244 [32minfo[39m: [32mSistema encerrado.[39m
+2025-02-02 13:15:00:150 [32minfo[39m: [32mSistema de gerenciamento de livros iniciado.[39m
+2025-02-02 13:15:00:150 [32minfo[39m: [32mBanco de dados inicializado com sucesso.[39m
+2025-02-02 13:15:19:1519 [32minfo[39m: [32mSistema encerrado.[39m
+2025-02-02 13:16:10:1610 [32minfo[39m: [32mSistema de gerenciamento de livros iniciado.[39m
+2025-02-02 13:16:10:1610 [32minfo[39m: [32mBanco de dados inicializado com sucesso.[39m
+2025-02-02 13:16:37:1637 [32minfo[39m: [32mLivro ID 2 atualizado.[39m
+2025-02-02 13:16:43:1643 [32minfo[39m: [32mListagem de livros realizada com sucesso.[39m
+2025-02-02 13:16:51:1651 [33mwarn[39m: [33mTentativa de busca por ID 1 falhou (não encontrado).[39m
+2025-02-02 13:16:57:1657 [32minfo[39m: [32mSistema encerrado.[39m
+2025-02-02 17:37:00:370 [32minfo[39m: [32mSistema de gerenciamento de livros iniciado.[39m
+2025-02-02 17:37:00:370 [32minfo[39m: [32mBanco de dados inicializado com sucesso.[39m
