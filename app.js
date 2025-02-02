@@ -75,6 +75,7 @@ async function buscarLivroPorId() {
 }
 
 // Função para cadastrar um novo livro
+// Função para cadastrar um novo livro
 async function cadastrarLivro() {
   try {
     const resposta = await inquirer.prompt([
@@ -84,6 +85,9 @@ async function cadastrarLivro() {
       { type: 'input', name: 'genero', message: 'Gênero do livro (opcional):' },
       { type: 'input', name: 'preco', message: 'Preço do livro (opcional):', validate: (input) => input === '' || !isNaN(input) || 'Digite um valor numérico.' },
     ]);
+
+   
+    const dataCadastro = new Date().toISOString();
 
     await db.run(
       'INSERT INTO livros (titulo, autor, ano_publicacao, genero, preco, data_cadastro) VALUES (?, ?, ?, ?, ?, ?)',
@@ -96,6 +100,7 @@ async function cadastrarLivro() {
   }
   menuPrincipal();
 }
+
 // Função para atualizar um livro
 async function atualizarLivro() {
   try {
