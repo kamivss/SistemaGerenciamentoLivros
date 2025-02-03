@@ -23,7 +23,7 @@ O **Sistema de Gerenciamento de Livros** é uma aplicação para gerenciar o cad
 - **Docker**: Para containerização 
 - **Bibliotecas**: Winston (logs)
 
-# Como rodar a aplicação com Docker
+# Como rodar a aplicação com Docker (elimina a necessidade de instalar dependências manualmente)
 
 ## Pré-requisitos
 
